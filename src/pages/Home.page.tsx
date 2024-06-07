@@ -1,10 +1,11 @@
-// import PostList from '../components/core/PostList';
-import { MainLayout } from '../layouts';
+import React from 'react';
+import PostList from 'src/components/core/PostList';
+import { MainLayout } from 'src/layouts';
 
 function HomePage() {
   return (
     <MainLayout>
-      <section>{/* <PostList /> */}</section>`
+      <PostList />
     </MainLayout>
   );
 }
