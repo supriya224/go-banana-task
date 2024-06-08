@@ -16,7 +16,7 @@ import React, { useState } from 'react';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['Home', 'Features', 'About', 'Contact'];
+const pages = ['Home', 'Features'];
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -28,72 +28,60 @@ const Header: React.FC = () => {
     setOpen(false);
   };
   return (
-    <header>
-      <AppBar position="static">
-        <Toolbar>
+    <AppBar position="static" sx={{}}>
+      <Toolbar>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
+        >
+          GoBanana
+        </Typography>
+        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          {pages.map((page) => (
+            <Button color="inherit">{page}</Button>
+          ))}
+        </Box>
+        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
-            aria-lebal="logo"
-            sx={{ display: { xs: 'none', md: 'flex' } }}
+            onClick={openMenu}
           >
-            <AutoStoriesIcon />
+            <MenuIcon />
           </IconButton>
-
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
-          >
-            GoBanana
-          </Typography>
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button color="inherit">{page}</Button>
-            ))}
-          </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              onClick={openMenu}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              open={Boolean(open)}
-              onClose={closeMenu}
-              sx={{ display: { xs: 'flex', md: 'none' } }}
-            >
-              <MenuList>
-                {pages.map((page) => (
-                  <MenuItem color="inherit">{page}</MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-          </Box>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-lebal="logo"
+          <Menu
+            open={Boolean(open)}
+            onClose={closeMenu}
             sx={{ display: { xs: 'flex', md: 'none' } }}
           >
-            <AutoStoriesIcon />
-          </IconButton>
+            <MenuList>
+              {pages.map((page) => (
+                <MenuItem color="inherit">{page}</MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
+        </Box>
+        <IconButton
+          size="large"
+          edge="start"
+          color="secondary"
+          aria-lebal="logo"
+          sx={{ display: { xs: 'flex', md: 'none' } }}
+        >
+          <AutoStoriesIcon />
+        </IconButton>
 
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            GoBanana
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </header>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+        >
+          GoBanana
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 
