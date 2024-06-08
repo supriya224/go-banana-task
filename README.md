@@ -1,6 +1,7 @@
 # My Go banana task (React TypeScript and material ui proejct)
 
-This project is a React application built with TypeScript and Material-UI. It fetches data from an API, displays it locally, and includes a search functionality to filter the displayed data.
+This project is a React application built with TypeScript and Material-UI. It fetches data from an API, displays it locally, and includes a search functionality to filter the displayed data.  [Deplopy](https://go-banana-task.vercel.app/),
+
 
 ## Features
 
