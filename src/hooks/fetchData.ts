@@ -5,6 +5,7 @@
 import { useState, useEffect } from 'react';
 import constants from '../utils/constants';
 
+// I create an interface of getting data from the api
 interface Post {
   userId: number;
   id: number;
@@ -17,6 +18,7 @@ const useFetchData = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  // for handling the api i have used use Effect
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -34,7 +36,7 @@ const useFetchData = () => {
     };
 
     fetchData();
-  }, []);
+  }, []); // Empty dependency array means this effect runs once on mount
 
   return { data, loading, error };
 };

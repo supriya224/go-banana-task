@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import { TextField, Grid } from '@mui/material';
 import useFetchData from '../../hooks/fetchData';
 
+// interface of the getting data from the hooks which is coming from the api
 interface Post {
   id: number;
   userId: number;
