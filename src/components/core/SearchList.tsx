@@ -45,18 +45,18 @@ const SearchList: React.FC = () => {
   const theme = useTheme();
   return (
     <MainLayout>
-      <div className="flex items-center justify-center my-12">
+      <div className="flex items-center justify-center my-12 mx-12">
         <TextField
           id="outlined-basic"
           label="search items here from the api..."
           variant="outlined"
           onChange={handleInputChange}
           value={searchTerm}
-          sx={{ width: 400, mx: 3 }}
+          sx={{ width: 400, mx: 3, boxShadow: 3 }}
         />
         <Button
           variant="contained"
-          sx={{ height: 52 }}
+          sx={{ height: 52, boxShadow: 6 }}
           onClick={handleButtonClick}
         >
           search
@@ -78,7 +78,8 @@ const SearchList: React.FC = () => {
                 maxWidth: 400,
                 mx: 2,
                 my: 8,
-                boxShadow: 1,
+                boxShadow: 6,
+                borderRadius: 3,
               }}
               key={post.id}
             >

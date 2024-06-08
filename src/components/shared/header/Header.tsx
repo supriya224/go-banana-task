@@ -13,7 +13,6 @@ import {
   Menu,
 } from '@mui/material';
 import React, { useState } from 'react';
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const pages = ['Home', 'Features'];
@@ -30,6 +29,7 @@ const Header: React.FC = () => {
   return (
     <AppBar position="static" sx={{}}>
       <Toolbar>
+        <img src="" alt="" />
         <Typography
           variant="h6"
           component="div"
@@ -63,15 +63,6 @@ const Header: React.FC = () => {
             </MenuList>
           </Menu>
         </Box>
-        <IconButton
-          size="large"
-          edge="start"
-          color="secondary"
-          aria-lebal="logo"
-          sx={{ display: { xs: 'flex', md: 'none' } }}
-        >
-          <AutoStoriesIcon />
-        </IconButton>
 
         <Typography
           variant="h6"

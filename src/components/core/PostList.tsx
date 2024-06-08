@@ -39,9 +39,10 @@ const PostList: React.FC = () => {
                 maxWidth: 400,
                 mx: 2,
                 my: 8,
-                boxShadow: 1,
+                boxShadow: 6,
                 display: 'flex',
                 justifyContent: 'center',
+                borderRadius: 3,
               }}
               key={post.id}
             >
